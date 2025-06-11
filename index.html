@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlosdv</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+  <header>
+  <nav class="navbar">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#HOME">HOME</a></li>
+      <li><a href="#PROYECTOS">PROYECTOS</a></li>
+      <li><a href="#ACERCADEMI">ACERDE DE MI</a></li>
+      <li><a href="#CONTACTAME">CONTACTAME</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      &#9776;
+    </div>
+  </nav>
+</header>
+<!----------------------- SECCION 1 -> HOME ------------------------------->
+  <section class="hero" id="HOME">
+    <img src="assets/img1.svg" alt="SVG escritorio" class="hero-svg hero-svg-desktop" />
+    <img src="assets/img1_resp.svg" alt="SVG móvil" class="hero-svg hero-svg-mobile" />
+  
+    <h1>Hey there.<br>I’m Alex.<br><span>I’m a software developer</span></h1>
+    <p> I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hesitate to contact me.</p>
+    
+    <div class="hero-social">
+    <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="correo" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+<!-- Flecha hacia abajo para navegar a la sección de proyectos -->
+  <div class="down-arrow-container">
+    <span class="down-arrow-circle">
+      <i class="fas fa-chevron-down"></i>
+    </span>
+  </div>
+<!----------------------- SECCION 2 -> MIS PROYECTOS ------------------------------->
+  
+<section class="projects" id="PROYECTOS">
+    <h2>My Recent<br>Works</h2>
+    <div class="projects-list">
+    <div class="project-card">
+      <div class="project-img">
+        <!--<img src="/assets/cajas.jpg" alt="Proyecto" />-->
+      </div>
+      <div class="project-info">
+        <h3>Multi-Post Stories <br> Gain+Glory</h3>
+        <div class="project-languages">
+          <span class="lang-badge">Ruby on Rails</span>
+          <span class="lang-badge">CSS</span>
+          <span class="lang-badge">JavaScript</span>
+          <span class="lang-badge">HTML</span>
+        </div>
+        <a class="project-btn" href="#">Seee project</a>
+      </div>
+    </div>
+    
+    
+  </section>
+<!------------------------- SECCION 3 ->ACERCA DE MI ------------------------------->
+  <section class="about" id="ACERCADEMI">
+  <div class="about-svg-row">
+    <img class="about-svg about-svg-left" src="assets/sec3i.svg" alt="Decoración izquierda">
+    <img class="about-svg about-svg-right" src="assets/sec3d.svg" alt="Decoración derecha">
+  </div>
+  <h2>About me</h2>
+  <p> I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, 
+    don’t hesitate to contact me.</p>
+  <a class="abo-btn" href="#">Get my resume</a>
+
+  <div class="about-cards">
+    <div class="about-card">
+      <div class="about-icon">
+        <img src="/assets/ico1.svg"/>
+        <svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#36B37E"/></svg>
+      </div>
+      <div class="about-title">Languages</div>
+      <div class="about-tags">
+        <span class="about-badge">JavaScript</span>
+        <span class="about-badge">Ruby</span>
+        <span class="about-badge">HTML</span>
+        <span class="about-badge">CSS</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">
+        <img src="/assets/ico2.svg"/>
+        <svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#36B37E"/></svg>
+      </div>
+      <div class="about-title">Frameworks</div>
+      <div class="about-tags">
+        <span class="about-badge">React.js</span>
+        <span class="about-badge">Ruby on Rails</span>
+        <span class="about-badge">RSpec</span>
+        <span class="about-badge">Capybara</span>
+        <span class="about-badge">Selenium</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">
+        <img src="/assets/ico3.svg"/>
+        <svg width="32" height="32"><circle cx="16" cy="16" r="14" fill="#36B37E"/></svg>
+      </div>
+      <div class="about-title">Skills</div>
+      <div class="about-tags">
+        <span class="about-badge">Database Management</span>
+        <span class="about-badge">Version Control</span>
+        <span class="about-badge">CLI</span>
+        <span class="about-badge">Web developement</span>
+      </div>
+    </div>
+  </div>
+  <!--------------------------- FORMULARIO ------------------------->
+  <div class="about-contact-row" id="CONTACTAME">
+    <div class="contact-svg-row">
+    <img class="contact-svg contact-svg-left" src="assets/imgformi.svg" alt="Decoración izquierda">
+    <img class="contact-svg contact-svg-right" src="assets/imgformd.svg" alt="Decoración derecha">
+  </div>
+  <p>I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</p>
+        <form class="contact-form" action="https://formspree.io/f/xrbqwekp" method="POST">
+    <div class="form-row name-row">
+      <input type="text" placeholder="First Name" name="first-name" class="first-name" required>
+      <input type="text" placeholder="Last Name" name="last-name" class="last-name" required>
+      
+    </div>
+    <input type="email" placeholder="Email Address" name="email" required>
+    <textarea placeholder="Comments or content" name="comments" rows="4" required></textarea>
+    <button type="submit">Get in touch</button>
+  </form>
+</div>
+</section>
+<!------------------------- FOOTER ------------------------------->
+  <footer class="main-footer">
+  <div class="footer-social">
+    <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
