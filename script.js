@@ -1,25 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Formulario: Combinar nombre y apellido en campo oculto
-  const form = document.querySelector(".contact-form");
-  const firstNameField = document.querySelector(".first-name");
-  const lastNameField = document.querySelector(".last-name");
-  const hiddenFullNameField = document.querySelector(".hidden-full-name");
-
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      // Si el campo "Nombre completo" está vacío, combinar "First Name" y "Last Name"
-      if (hiddenFullNameField && firstNameField && lastNameField && !hiddenFullNameField.value.trim()) {
-        hiddenFullNameField.value = `${firstNameField.value.trim()} ${lastNameField.value.trim()}`;
-      }
-
-      // Validar que al menos uno de los campos esté lleno
-      if (hiddenFullNameField && !hiddenFullNameField.value.trim()) {
-        event.preventDefault(); // Detiene el envío del formulario
-        alert("Por favor, completa el campo de Nombre completo o los campos de Nombre y Apellido.");
-        return;
-      }
-    });
-  }
 
   // Menú hamburguesa
   const hamburger = document.getElementById('hamburger');
@@ -27,7 +6,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', function () {
-      navLinks.classList.toggle('active'); // <-- Cambia aquí
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active'); // <-- Añadido para animación
+    });
+  }
+  // modal de proyecto
+  const modal = document.getElementById('projectModal');
+  const openModalBtn = document.querySelector('.project-btn');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  if (openModalBtn && modal && closeModalBtn) {
+    openModalBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    closeModalBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    // Cerrar modal al hacer click fuera del contenido
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
     });
   }
 });
+

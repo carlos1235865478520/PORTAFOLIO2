@@ -6,7 +6,7 @@
 }
 .nav-links li a:hover,
 .nav-links li a:focus {
-  background: #007bff; color: #fff; box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  background: #159b27; color: #fff; box-shadow: 0 2px 8px rgba(0,123,255,0.08);
 }
 .navbar {
   display: flex; justify-content: center; position: fixed; top: 0; left: 0; width: 100%;
@@ -15,9 +15,23 @@
 .nav-links {
   display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
 }
+/****************MENU HAMBURGUESA*****************/
 .hamburger {
-  display: none; font-size: 2rem; cursor: pointer; position: absolute; right: 2rem; top: 50%;
-  transform: translateY(-50%);
+  width: 30px; height: 30px; display: none; flex-direction: column; justify-content: center;
+  gap: 8px; cursor: pointer; z-index: 1001; position: static;
+}
+.hamburger span {
+  display: block; height: 4px; width: 100%; background: #000000be; border-radius: 2px;
+  transition: 0.4s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg); background: #000000;
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg); background: #000000;
 }
 /********************** SECCION 1 **********************/
 .hero {
@@ -61,7 +75,6 @@
   color: #007bff;
 }
 /****************FLECHA PARA SECCION PROYECTOS*************/
-/* Agrega esto a estilos.css */
 .down-arrow-container {
   display: flex; justify-content: center; align-items: center; margin: 24px 0;
 }
@@ -70,7 +83,7 @@
   font-size: 15px; color: #333; transition: background 0.2s; border: 2px solid #0000003d; 
 }
 .down-arrow-circle:hover {
-  background: #bdbdbd;
+  background: #36b37f8c;
 }
 /*************************** SECCION 2 **************************/
 .projects h2 {
@@ -82,19 +95,20 @@
   background: #36B37E; border-radius: 2px;
 }
   /*cajas*/
- .projects-list { display: flex; flex-wrap: wrap; justify-content: center; max-width: 1100px;      
+ .projects-list { 
+  display: flex; flex-wrap: wrap; justify-content: center;      
   margin: 0 auto; padding: 0 rem;       
 }
 .project-card {
-  height: 29.625rem; max-width: 20.4375rem; box-sizing: border-box; margin: 1rem auto;   /* <-- Espacio extra arriba y abajo de cada caja */
+  height: 30.625rem; max-width: 20.4375rem; box-sizing: border-box; margin: 1rem auto;   /* <-- Espacio extra arriba y abajo de cada caja */
   border: 2px solid #0000003d; border-radius: 6px;
 }
 .project-img {
-  width: 100%; height: 15rem;  background: #d0d1d159; display: flex; align-items: center;
+  width: 100%; height: 14rem;  background: #d0d1d159; display: flex; align-items: center;
   justify-content: center; overflow: hidden;
 }
 .project-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+  width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 6px;
 }
 /* info*/
 .project-info {
@@ -105,17 +119,14 @@
   font-weight: 700; margin-top: 1rem; line-height: 1.30; 
 }
 .project-languages {
-  display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap; margin: 0;
+  display: flex; gap: 0.1rem; justify-content: center; flex-wrap: wrap; margin: 0;
 }
-
-.lang-badge {
-  background: #ebf0ee; color: #000000; padding: 0.1rem 0.5rem; font-size: 0.80rem;
-  font-family: 'Inter', Arial, sans-serif; display: inline-block; margin-top: 0; 
+.project-languages span	 {
+  font-size: 12px; font-family: 'Inter', Arial, sans-serif;
 }
-
 .lang-badge {
-  background: #ebf0ee; color: #000000; padding: 0.1rem 0.5rem;   font-size: 0.80rem;
-  font-family: 'Inter', Arial, sans-serif; display: inline-block;
+  background: #e0e0e0; color: #333; border-radius: 4px; padding: 0.15rem 0.5rem; 
+  margin: 0 2px; 
 }
 /*boton*/
 .project-btn {
@@ -126,6 +137,119 @@
 .project-btn:hover {
   background: #22dd83;
 }
+/********************************** MODAL ********************************/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  width: 60vw;
+  height: 80vh;
+  max-width: 100vw;
+  max-height: 90vh;
+  border-radius: 6px;
+  padding: 2rem;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  color: #000;
+  cursor: pointer;
+  background-color: #b6b6b6a8;
+  border-radius: 6px;
+  z-index: 1000;
+  padding: 0rem 1rem;
+}
+.modal-img {
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 600px; /* Tamaño fijo*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.modal-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #01203a;
+  line-height: 1.1;
+  margin-top: 1.10rem;
+}
+.modal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.modal-btn {
+  padding: 0.7em 1.5em;
+  font-size: 1.1rem;
+  height: 2.8em;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  background: #36B37E;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-btn:hover {
+  background: #227e57;
+}
+.modal-languages {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.lang-badge {
+  background: #e0e0e0;
+  color: #333;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.95rem;
+}
+.modal-description {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
 /***************************** SECCION 3 **************************/
 .about h2 {
   text-align: center; font-size: 2.5rem; font-weight: 700; font-family: 'Inter', Arial, sans-serif;
@@ -264,7 +388,7 @@
     display: none;
     flex-direction: column;
     gap: 2rem;
-    background: #000000cb;
+    background: #ffffff98;
     position: fixed;
     inset: 0;
     text-align: center;
@@ -278,12 +402,15 @@
     display: flex;
   }
   .nav-links.active a {
-    color: #fff;
+    color: #000000;
     font-size: 2rem;
   }
   .hamburger {
-    display: block;
-    z-index: 1100;
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    gap: 8px;    
   }
   body.menu-open {
     overflow: hidden;
@@ -329,7 +456,45 @@
   .contact-form {
   max-width: 80%;
 }
-  
+  /**************** MODAL **********************/
+  .modal-content {
+    padding: 1rem;
+  }
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .modal-img {
+    height: auto;           /* Quita la altura fija */
+    min-height: unset;
+    max-height: 60vh;       /* Opcional: limita el alto en móvil */
+    margin-bottom: 1rem;
+  }
+  .modal-img img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;       /* Opcional: limita el alto en móvil */
+    object-fit: contain;    /* Muestra la imagen completa sin recortar */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  .modal-buttons {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    gap: 0.5rem;
+  }
+  .modal-btn {
+    font-size: 0.95rem;
+    padding: 0.5em 1em;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+  }
 }
 
 
