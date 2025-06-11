@@ -129,12 +129,12 @@
   <p>I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</p>
         <form class="contact-form" action="https://formspree.io/f/xrbqwekp" method="POST">
     <div class="form-row name-row">
-      <input type="text" placeholder="First Name" name="first-name" class="first-name" required>
-      <input type="text" placeholder="Last Name" name="last-name" class="last-name" required>
+      <input type="text" placeholder="First Name" maxlength="30" name="first-name" class="first-name" required>
+      <input type="text" placeholder="Last Name" maxlength="30" name="last-name" class="last-name" required>
       
     </div>
     <input type="email" placeholder="Email Address" name="email" required>
-    <textarea placeholder="Comments or content" name="comments" rows="4" required></textarea>
+    <textarea placeholder="Comments or content" maxlength="500" name="comments" rows="4" required></textarea>
     <button type="submit">Get in touch</button>
   </form>
 </div>
