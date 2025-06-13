@@ -1,284 +1,573 @@
 /******************** HEADER ***********************/
 .nav-links li a {
-  text-decoration: none;color: #222;font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 1.1rem;font-weight: 600;letter-spacing: 1px;padding: 0.5rem 1rem;
-  border-radius: 4px;transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 .nav-links li a:hover,
 .nav-links li a:focus {
-  background: #159b27; color: #fff; box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  color: #08a03bda; 
 }
 .navbar {
-  display: flex; justify-content: center; position: fixed; top: 0; left: 0; width: 100%;
-  z-index: 2000; padding: 1rem 0; background: #ffffffda;  
+  display: flex; 
+  justify-content: center; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: 2000; 
+  padding: 1rem 0; 
+  background: #ffffffda;  
 }
 .nav-links {
-  display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
+  display: flex; 
+  gap: 2rem; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
 }
 /****************MENU HAMBURGUESA*****************/
 .hamburger {
-  width: 30px; height: 30px; display: none; flex-direction: column; justify-content: center;
-  gap: 8px; cursor: pointer; z-index: 1001; position: static;
+  width: 30px; 
+  height: 30px; 
+  display: none; 
+  flex-direction: column; 
+  justify-content: center;
+  gap: 8px; 
+  cursor: pointer; 
+  z-index: 1001; 
+  position: static;
 }
 .hamburger span {
-  display: block; height: 4px; width: 100%; background: #000000be; border-radius: 2px;
+  display: block; 
+  height: 4px; 
+  width: 100%; 
+  background: #000000be;
+  border-radius: 2px;
   transition: 0.4s;
 }
 .hamburger.active span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg); background: #000000;
+  transform: translateY(12px) rotate(45deg); 
+  background: #000000;
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg); background: #000000;
+  transform: translateY(-12px) rotate(-45deg); 
+  background: #000000;
 }
 /********************** SECCION 1 **********************/
 .hero {
-  position: relative; display: flex; flex-direction: column; align-items: center;
-  justify-content: center; text-align: center; min-height: 100vh; margin-top: 1rem;
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  text-align: center; 
+  min-height: 100vh; 
+  margin-top: 1rem;
   overflow: hidden;  /* Oculta el desbordamiento del SVG */
 }
 .hero-svg-mobile {
   display: none; /*QUITAR DE LA VISTA*/
 }
 .hero-svg {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-  z-index: 0; pointer-events: none;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  z-index: 0; 
+  pointer-events: none;
 }
 .hero > *:not(.hero-svg) {
-  position: relative; z-index: 1; /* Encima del SVG */
+  position: relative; 
+  z-index: 1; /* Encima del SVG */
 }
 .hero {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; margin-top: 1rem;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin-top: 1rem;
 }
 .hero h1 {
-  font-family: 'Inter', Arial, sans-serif; font-size: 3rem; letter-spacing: 0.37px;
-  color: #172B4D; font-weight: 700; margin-bottom: 1rem; line-height: 1.20;  /*espacio entre lineas*/
+  font-family: 'Inter', Arial, sans-serif; 
+  font-size: 3rem; 
+  letter-spacing: 0.37px;
+  color: #172B4D; 
+  font-weight: 700; 
+  margin-bottom: 1rem; 
+  line-height: 1.20;  /*espacio entre lineas*/
 }
 .hero h1 span {
   color: #36B37E;
 }
 .hero p {
-  text-align: center; font-family: 'Inter', Arial, sans-serif; font-size: 1.25rem; color: #353535;
-  max-width: 600px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem;
+  text-align: center; 
+  font-family: 'Inter', Arial, sans-serif; 
+  font-size: 1.25rem; 
+  color: #353535;
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding-left: 1rem; 
+  padding-right: 1rem;
 }
 /******************* ICONOC ********************/
 .hero-social {
-  margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center;
+  margin-top: 2rem; 
+  display: flex; 
+  gap: 1.5rem; 
+  justify-content: center;
 }
 .hero-social a {
-  color: #505F79; font-size: 2rem; transition: color 0.2s;
+  color: #505F79; 
+  font-size: 2rem; 
+  transition: color 0.2s;
 }
 .hero-social a:hover {
   color: #007bff;
 }
 /****************FLECHA PARA SECCION PROYECTOS*************/
 .down-arrow-container {
-  display: flex; justify-content: center; align-items: center; margin: 24px 0;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 24px 0;
 }
 .down-arrow-circle {
-  display: flex; justify-content: center; align-items: center; border-radius: 50%; width: 48px; height: 48px;
-  font-size: 15px; color: #333; transition: background 0.2s; border: 2px solid #0000003d; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 50%; 
+  width: 48px; 
+  height: 48px;
+  font-size: 15px; 
+  color: #333; 
+  transition: background 0.2s; 
+  border: 2px solid #0000005e; 
 }
 .down-arrow-circle:hover {
   background: #36b37f8c;
 }
 /*************************** SECCION 2 **************************/
+.projects {
+  padding: 0 15rem;  
+  background: #0080ff00; 
+}
 .projects h2 {
-  text-align: center; font-size: 2.5rem;  font-family: 'Inter', Arial, sans-serif;
-  font-weight: 700; margin-bottom: 1.5rem; position: relative; line-height: 1.25;
+  text-align: center; 
+  font-size: 2.5rem;  
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 700; 
+  margin-bottom: 1.5rem; 
+  position: relative; 
+  line-height: 1.25;
 }
 .projects h2::after {
-  content: ""; display: block; margin: 0.5rem auto 0 auto; width: 60px; height: 4px;
-  background: #36B37E; border-radius: 2px;
+  content: ""; 
+  display: block; 
+  margin: 0.5rem auto 0 auto; 
+  width: 60px;
+  height: 4px;
+  background: #36B37E; 
+  border-radius: 2px;
 }
   /*cajas*/
  .projects-list { 
-  display: flex; flex-wrap: wrap; justify-content: center;      
-  margin: 0 auto; padding: 0 rem;       
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;      
+  margin: 0 auto; 
+  padding: 0 rem;       
 }
 .project-card {
-  height: 30.625rem; max-width: 20.4375rem; box-sizing: border-box; margin: 1rem auto;   /* <-- Espacio extra arriba y abajo de cada caja */
-  border: 2px solid #0000003d; border-radius: 6px;
+  height: 30.625rem;
+  max-width: 20.4375rem; 
+  box-sizing: border-box; 
+  margin: 1rem auto;
+  border: 2px solid #0000003d; 
+  border-radius: 6px;
 }
 .project-img {
-  width: 100%; height: 14rem;  background: #d0d1d159; display: flex; align-items: center;
-  justify-content: center; overflow: hidden;
+  width: 100%; 
+  height: 14rem;  
+  background: #d0d1d159; 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
 }
 .project-img img {
-  width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 6px;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  border-radius: 6px;
 }
 /* info*/
 .project-info {
-  width: 100%; display: flex; flex-direction: column;
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
 }
 .project-info h3 {
-  text-align: center; font-size: 1.5rem; font-family: 'Inter', Arial, sans-serif;
-  font-weight: 700; margin-top: 1rem; line-height: 1.30; 
+  text-align: center; 
+  font-size: 1.5rem; 
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  margin-top: 1rem; 
+  line-height: 1.30; 
 }
 .project-languages {
-  display: flex; gap: 0.1rem; justify-content: center; flex-wrap: wrap; margin: 0;
+  display: flex; 
+  gap: 0.1rem; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  margin: 0;
 }
 .project-languages span	 {
-  font-size: 12px; font-family: 'Inter', Arial, sans-serif;
+  font-size: 12px; 
+  font-family: 'Inter', Arial, sans-serif;
 }
 .lang-badge {
-  background: #e0e0e0; color: #333; border-radius: 4px; padding: 0.15rem 0.5rem; 
+  background: #e0e0e0; 
+  color: #333; 
+  border-radius: 4px; 
+  padding: 0.15rem 0.5rem; 
   margin: 0 2px; 
 }
 /*boton*/
 .project-btn {
-  display: block; margin: 1.5rem auto 0 auto; padding: 0.6rem 1rem; background: #36B37E;              
-  color: #fff; border: none; border-radius: 3px; font-size: 1.1rem;                
-  font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s;      
+  display: block;
+  margin: 1.5rem auto 0 auto; 
+  padding: 0.6rem 1rem; 
+  background: #36B37E;              
+  color: #fff; 
+  border: none; 
+  border-radius: 3px; 
+  font-size: 1.1rem;                
+  font-weight: 600; 
+  cursor: pointer; 
+  text-align: center; 
+  text-decoration: none; 
+  transition: background 0.2s;      
 }
 .project-btn:hover {
   background: #22dd83;
 }
 /********************************** MODAL ********************************/
 .modal {
-  display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.877); justify-content: center; align-items: center;
+  display: none; 
+  position: fixed; 
+  z-index: 3000; 
+  left: 0; 
+  top: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.877); 
+  justify-content: center; 
+  align-items: center;
 }
 .modal-content {
-  background: #fff; width: 60vw; height: 80vh; max-width: 100vw; max-height: 90vh; border-radius: 6px; padding: 2rem;
-  position: relative;  display: flex; flex-direction: column; align-items: stretch; overflow-y: auto;
+  background: #fff; 
+  width: 60vw;
+  height: 80vh;
+  max-width: 100vw; 
+  max-height: 90vh; 
+  border-radius: 6px; 
+  padding: 2rem;
+  position: relative;  
+  display: flex; 
+  flex-direction: column; 
+  align-items: stretch; 
+  overflow-y: auto;
 }
 .modal-close {
-  position: absolute; top: 10px;  right: 10px;  font-size: 40px; cursor: pointer; color: #000000;  z-index: 1000; 
+  position: absolute; 
+  top: 10px;  
+  right: 10px;  
+  font-size: 40px; 
+  cursor: pointer; 
+  color: #000000;  
+  z-index: 1000; 
 }
 .modal-img {
-  width: 100%; flex-shrink: 0; flex-grow: 0; height: 600px; /* Tamaño fijo*/ display: flex; justify-content: center; align-items: center;
-  overflow: hidden; margin-bottom: 1.5rem;
+  width: 100%; 
+  flex-shrink: 0; 
+  flex-grow: 0; 
+  height: 600px; /* Tamaño fijo*/ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  overflow: hidden; 
+  margin-bottom: 1.5rem;
 }
 .modal-img img {
-  width: 100%; height: 100%; object-fit: cover; border-radius: 10px; display: block;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 10px; 
+  display: block;
 }
 .modal-header {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 1rem; 
+  margin-bottom: 1rem;
 }
 .modal-title {
-  font-size: 32px; font-weight: bold; margin: 0; flex: 1; font-family: 'Inter', Arial, sans-serif; color: #01203a; line-height: 1.1;
+  font-size: 32px; 
+  font-weight: bold; 
+  margin: 0; 
+  flex: 1; 
+  font-family: 'Inter', Arial, sans-serif; 
+  color: #01203a; 
+  line-height: 1.1;
   margin-top: 1.10rem;
 }
 .modal-buttons {
-  display: flex; gap: 0.5rem;
+  display: flex; 
+  gap: 0.5rem;
 }
 .modal-btn {
-  padding: 0.7em 1.5em; font-size: 1.1rem; height: 2.8em; display: flex; align-items: center; gap: 0.6em; background: #36B37E;
-  color: #fff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+  padding: 0.7em 1.5em; 
+  font-size: 1.1rem; 
+  height: 2.8em; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.6em; 
+  background: #36B37E;
+  color: #fff; 
+  border: none; 
+  border-radius: 6px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: background 0.2s;
 }
 .modal-btn:hover {
   background: #227e57;
 }
 .modal-languages {
-  display: flex; gap:0.5rem; margin-bottom: 1rem; flex-wrap: wrap;
+  display: flex; 
+  gap:0.5rem; 
+  margin-bottom: 1rem; 
+  flex-wrap: wrap;
 }
 .lang-badge {
-  background: #e0e0e0; color: #333; border-radius: 4px; padding: 0.3rem 0.8rem; font-size: 0.95rem;
+  background: #e0e0e0; 
+  color: #333; 
+  border-radius: 4px; 
+  padding: 0.3rem 0.8rem; 
+  font-size: 0.95rem;
 }
 .modal-description {
-  font-size: 1.1rem; color: #444; margin-bottom: 0.5rem;
+  font-size: 1.1rem; 
+  color: #444; 
+  margin-bottom: 0.5rem;
 }
 
 /***************************** SECCION 3 **************************/
 .about h2 {
-  text-align: center; font-size: 2.5rem; font-weight: 700; font-family: 'Inter', Arial, sans-serif;
+  text-align: center; 
+  font-size: 2.5rem; 
+  font-weight: 700; 
+  font-family: 'Inter', Arial, sans-serif;
 }
 .about p{
-  text-align: center; font-family: 'Inter', Arial, sans-serif; font-size: 1.25rem; color: #353535;
-  max-width: 600px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem;
+  text-align: center; 
+  font-family: 'Inter', Arial, sans-serif; 
+  font-size: 1.25rem; 
+  color: #353535;
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding-left: 1rem; 
+  padding-right: 1rem;
 }
 .about {
   text-align: center;
 }
 .abo-btn {
-  display: inline-block; margin: 2rem auto 0 auto; padding: 0.7rem 1rem; background: #36B37E; color: #fff;
-  border: none; border-radius: 8px; font-size: 1.1rem; font-family: 'Inter', Arial, sans-serif;
-  cursor: pointer; text-align: center; text-decoration: none; transition: background 0.2s;
+  display: inline-block; 
+  margin: 2rem auto 0 auto; 
+  padding: 0.7rem 1rem; 
+  background: #36B37E; 
+  color: #fff;
+  border: none; 
+  border-radius: 8px; 
+  font-size: 1.1rem; 
+  font-family: 'Inter', Arial, sans-serif;
+  cursor: pointer; 
+  text-align: center; 
+  text-decoration: none; 
+  transition: background 0.2s;
 }
 .abo-btn:hover {
   background: #259e63;
 }
 /*cards*/
 .about-cards {
-  display: flex; justify-content: center; gap: 2rem; margin: 3rem 0 0 0; flex-wrap: wrap;
+  display: flex; 
+  justify-content: center; 
+  gap: 2rem; 
+  margin: 3rem 0 0 0; 
+  flex-wrap: wrap;
 }
 .about-card {
-  background: #ebf0ee; border-radius: 16px; padding: 2rem 1.5rem 1.5rem 1.5rem; width: 21.4375rem; height: 19.75rem; 
-  display: flex; flex-direction: column; align-items: center; border: 2px solid #0000003d; box-sizing: border-box;
+  background: #ebf0ee;
+  border-radius: 16px; 
+  padding: 2rem 1.5rem 1.5rem 1.5rem; 
+  width: 21.4375rem; 
+  height: 19.75rem; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  border: 2px solid #0000003d; 
+  box-sizing: border-box;
 }
 .about-icon {
-  width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center;
-  justify-content: center; margin-top: 1.90rem;
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  margin-top: 1.90rem;
 }
 .about-title {
-  font-size: 24px; margin-bottom: 1rem; text-align: center; font-family: 'Inter', Arial, sans-serif;
+  font-size: 24px; 
+  margin-bottom: 1rem; 
+  text-align: center; 
+  font-family: 'Inter', Arial, sans-serif;
 }
 .about-tags {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+  justify-content: center;
 }
 .about-badge {
-  background: #fff; color: #36b37e; border-radius: 8px; padding: 0.3rem 0.9rem; font-size: 12px;
-  font-family: 'Inter', Arial, sans-serif; box-shadow: 0 1px 2px #0001;
+  background: #fff; 
+  color: #36b37e; 
+  border-radius: 8px; 
+  padding: 0.3rem 0.9rem; 
+  font-size: 12px;
+  font-family: 'Inter', Arial, sans-serif; 
+  box-shadow: 0 1px 2px #0001;
 }
 /********************** IMAGENES **********************/
 .about {
-  position: relative; overflow: hidden;
+  position: relative; 
+  overflow: hidden;
 }
 .about-svg-row {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none; 
+  z-index: 0;
 }
 .about-svg {
-  position: absolute; width: 300px; height: 300px;
+  position: absolute; 
+  width: 300px; 
+  height: 300px;
 }
 .about-svg-left {
-  left: -60px; top: 200px;    /* Ambos arriba */
+  left: -60px; 
+  top: 200px;    /* Ambos arriba */
 }
 .about-svg-right {
-  right: -50px; top: -60px;    /* Cambia bottom por top */
+  right: -50px; 
+  top: -60px;    /* Cambia bottom por top */
 }
 .about > *:not(.about-svg-row) {
-  position: relative; z-index: 1;
+  position: relative; 
+  z-index: 1;
 }
 /********************** CONTACTO FORMULARIO***********************/
 .about-contact-row {
-  display: flex; gap: 2rem; align-items: flex-start; justify-content: center; margin-top: 5rem; flex-wrap: wrap;
+  display: flex; 
+  gap: 2rem; 
+  align-items: flex-start; 
+  justify-content: center; 
+  margin-top: 5rem; 
+  flex-wrap: wrap;
 }
 .about-contact-row > p {
-  flex: 1 1 300px; font-size: 2.2rem; font-family: 'Inter', Arial, sans-serif; font-weight: 700;
-  max-width: 400px; margin: 0; line-height: 1.3;    
+  flex: 1 1 300px; 
+  font-size: 2.2rem; 
+  font-family: 'Inter', Arial, sans-serif; 
+  font-weight: 700;
+  max-width: 400px; 
+  margin: 0; 
+  line-height: 1.3;    
 }
 .contact-form {
-  flex: 1 1 320px; max-width: 45%; display: flex; flex-direction: column; gap: 1rem;
+  flex: 1 1 320px; 
+  max-width: 45%; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1rem;
 }
 .form-row {
-  display: flex; gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .contact-form input,
 .contact-form textarea {
-  width: 100%; padding: 0.7rem 4.5rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;
-  font-family: 'Inter', Arial, sans-serif; box-sizing: border-box;
+  width: 100%;
+  padding: 0.7rem 4.5rem; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  font-size: 1rem;
+  font-family: 'Inter', Arial, sans-serif; 
+  box-sizing: border-box;
 }
 .contact-form button {
-  display: inline-block; align-self: center; padding: 0.7rem 1.5rem; background: #36B37E; color: #fff;
-  border: none; border-radius: 6px; font-size: 1rem; font-family: 'Inter', Arial, sans-serif;
-  font-weight: 600; cursor: pointer; transition: background 0.2s;
+  display: inline-block; 
+  align-self: center; 
+  padding: 0.7rem 1.5rem; 
+  background: #36B37E; 
+  color: #fff;
+  border: none; 
+  border-radius: 6px; 
+  font-size: 1rem; 
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: background 0.2s;
 }
 .contact-form button:hover {
   background: #259e63;
 }
 /** imagenes**/
 .about-contact-row {
-  position: relative; overflow: hidden;
+  position: relative; 
+  overflow: hidden;
 }
 .contact-svg-row {
-  position: absolute; top: 0; left: 0; width: 100%; height: 0; pointer-events: none; z-index: 0;
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; height: 0; 
+  pointer-events: none; 
+  z-index: 0;
 }
 .contact-svg {
-  position: absolute; width: 320px; height: 320px; opacity: 1;
+  position: absolute; 
+  width: 320px; height: 320px; 
+  opacity: 1;
 }
 
 .contact-svg-left {
@@ -290,21 +579,34 @@
 
 /* El contenido principal debe estar por encima */
 .about-contact-row > *:not(.contact-svg-row) {
-  position: relative; z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 /*********************** FOOTER **************************/
 .main-footer {
-  background: #fff; border-top: 2px solid #ebf0ee; padding: 2rem 0; margin-top: 3rem;
+  background: #fff; 
+  border-top: 2px solid #ebf0ee; 
+  padding: 2rem 0; 
+  margin-top: 3rem;
 }
 .footer-social {
-  display: flex; justify-content: center; gap: 2rem;
+  display: flex; 
+  justify-content: center; 
+  gap: 2rem;
 }
 .footer-social a {
-  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; color: #5c5a5a;
-  font-size: 2rem; transition: border-color 0.2s, color 0.2s; text-decoration: none;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 48px; height: 48px; 
+  color: #5c5a5a;
+  font-size: 2rem; 
+  transition: border-color 0.2s, color 0.2s; 
+  text-decoration: none;
 }
 .footer-social a:hover {
-  border-color: #36B37E; color: #36B37E;
+  border-color: #36B37E; 
+  color: #36B37E;
 }
 /*********************** RESPONSIVOS -> NAVBAR **************************/
 @media (max-width: 768px) {
@@ -441,6 +743,11 @@
   flex-direction: column;
   align-items: stretch;
   overflow-y: auto;
+}
+/*********************************** TAMAÑO SECTION CAJITAS***********************************/
+.projects {
+  padding: 0 0rem;  
+  background: #0080ff00; 
 }
 }
 
